@@ -14,8 +14,8 @@ Spring boot developer
 ### Home Page
 ![h1](https://user-images.githubusercontent.com/71135805/213914352-3ee2b35d-5b28-42c5-b6e6-0a19ea20f09f.jpg)
 
-### Manage Page
-##![m1](https://user-images.githubusercontent.com/71135805/213914251-309d7f58-0797-477e-8cdb-10cf10191da1.jpg)
+### Manage Page (Admin)
+![m1](https://user-images.githubusercontent.com/71135805/213914251-309d7f58-0797-477e-8cdb-10cf10191da1.jpg)
 
 ### Add to categoty
 ![a1](https://user-images.githubusercontent.com/71135805/213914316-8ccdd4c1-26de-4c46-9192-f1d7d2d70027.jpg)
