@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeleaf.org">
+
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <title>Category Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+    integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+</head>
+
+
+<body>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" th:href="@{/user/}">Furniture HUB</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" th:href="@{/logout}">Logout</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div align="center" class="container">
+    <br>
+    <h1 >This Category is empty.</h1>
+
+  </div>
+  <div class="container">
+    <div class="row  d-flex justify-content-center">
+      <div class="card" style="border: none !important;">
+        <br>
+        <div class="d-flex flex-row-reverse">
+          <div class="dropdown me-1">
+            <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false" data-bs-offset="10,20">
+              Select Categorys
+            </button>
+            <ul class="dropdown-menu">
+              <th:block th:each="category:${category}">
+                <li>
+                  <a class="dropdown-item" th:text="${category.name}" th:value="${category.category_id}"
+                    th:href="@{/user/mycategory/{category_id}(category_id=${category.category_id})}"></a>
+                </li>
+              </th:block>
+            </ul>
+          </div>
+        </div>
+        <br>
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <!-- <th:block th:each="cf:${cfList}">
+            <div class="col">
+              <div class="card">
+                <img th:src="@{'~/img/'+${cf.furniture.image}}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">This is a longer card with supporting text below as a natural lead-in to
+                    additional
+                    content. This content is a little bit longer.</p>
+                  <a href="#" class="btn btn-danger">Delete</a>
+                </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">Style : </li>
+                  <li class="list-group-item">Type : </li>
+                </ul>
+              </div>
+            </div>
+          </th:block> -->
+        </div>
+
+      </div>
+      <br>
+    </div>
+
+    <a align="center" href="/user" class="btn btn-dark" role="button" aria-pressed="true">Back to Furniture Inventory</a>
+
+  </div>
+
+
+  </div>
+  <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+  <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+
+</html>

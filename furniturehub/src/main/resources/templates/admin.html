@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html xmln:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Inventory Homepage</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+</head>
+
+<body>
+    <div align="center" class="container">
+        <br>
+        <h1>Admin management page</h1>
+        <br>
+    </div>
+    <div class="container bg-default">
+        <h1>Add Furniture</h1>
+        <br>
+        <form th:action="@{/admin/add/furniture}" th:object="${furniture}" method="post" enctype="multipart/form-data">
+            <div>
+                <label>Name : </label>
+                <input type="text" th:field="*{name}" /><br>
+                <br>
+                <label>Photos : </label>
+                <input type="file" th:name="images" accept="image/png, image/jpeg" />
+                <br>
+
+                <br>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm*">&nbsp;&nbsp;&nbsp;Type :</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{ftype}" class="form-control">
+                            <th:block th:each="ftype:${tList}">
+                                <option th:text="${ftype.type_name}" th:value="${ftype.tid}">Select Type</option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label class="col-form-label col-sm*">&nbsp;&nbsp;&nbsp;Style :</label>
+                    <div class="col-sm-8">
+                        <select th:field="*{style}" class="form-control">
+                            <th:block th:each="style:${sList}">
+                                <option th:text="${style.style_name}" th:value="${style.sid}">Select Style</option>
+                            </th:block>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-secondary">Save Product</button>
+
+        </form>
+
+
+
+    </div>
+    <script th:src="@{/webjars/jquery/3.0.0/jquery.min.js}"></script>
+    <script th:src="@{/webjars/popper.js/1.12.9-1/umd/popper.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/4.0.0-2/js/bootstrap.min.js}"></script>
+</body>
+
+</html>
