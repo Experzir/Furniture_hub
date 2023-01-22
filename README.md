@@ -1,6 +1,6 @@
 # Furniture_hub 
 Spring boot developer
-Mysql 
+- Mysql database
 
 ### Furniture_hub Functions
 - Select type and Style : Select type or Style the furniture to show on the page
